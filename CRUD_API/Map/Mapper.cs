@@ -7,8 +7,8 @@ namespace CRUD_API.Map
     {
         public Mapper() 
         {
-            CreateMap<Author, AuthorDTO>().ReverseMap();
-            CreateMap<Book, BookDTO>().ReverseMap();
+            CreateMap<AuthorDTO, Author>().ReverseMap();
+            CreateMap<BookDTO, Book >().ReverseMap();
         }
     }
 }

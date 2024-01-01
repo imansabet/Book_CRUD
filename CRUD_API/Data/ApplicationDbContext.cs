@@ -17,6 +17,34 @@ namespace CRUD_API.Data
             .WithMany(a => a.Books)
             .HasForeignKey(b => b.AuthorId);
             // Add your seed data here if needed
+
+            modelBuilder.Entity<Author>().HasData
+                (
+                new Author() 
+                {
+                    AuthorId=1,
+                    Name = "Niche"
+                }, new Author()
+                {
+                    AuthorId = 2,
+                    Name = "Tolestoy"
+                }
+                );
+            modelBuilder.Entity<Book>().HasData
+                (
+                new Book()
+                {
+                    BookId = 1,
+                    Title = "when niche cryed",
+                    AuthorId = 1,
+                },
+                new Book()
+                {
+                    BookId = 2,
+                    Title = "War And Blood",
+                    AuthorId = 2,
+                }
+                );
         }
     }
 

@@ -3,6 +3,7 @@ using CRUD_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240101113633_AddDataToAuthorTable")]
+    partial class AddDataToAuthorTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,11 +45,6 @@ namespace CRUD_API.Migrations
                         {
                             AuthorId = 1,
                             Name = "Niche"
-                        },
-                        new
-                        {
-                            AuthorId = 2,
-                            Name = "Tolestoy"
                         });
                 });
 
@@ -70,20 +68,6 @@ namespace CRUD_API.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            BookId = 1,
-                            AuthorId = 1,
-                            Title = "when niche cryed"
-                        },
-                        new
-                        {
-                            BookId = 2,
-                            AuthorId = 2,
-                            Title = "War And Blood"
-                        });
                 });
 
             modelBuilder.Entity("CRUD_API.Model.Book", b =>
