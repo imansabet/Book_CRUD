@@ -1,6 +1,6 @@
 ﻿namespace CRUD_API.Model
 {
-    public class Book
+    public class BookDTO
     {
         public int BookId { get; set; }
         public string Title { get; set; }
