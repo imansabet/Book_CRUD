@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRUD_API.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_API.Data
 {
@@ -8,7 +9,8 @@ namespace CRUD_API.Data
         {
             
         }
-
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 
 }
