@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240101100653_AddDbTables")]
+    [Migration("20240101110116_AddDbTables")]
     partial class AddDbTables
     {
         /// <inheritdoc />
